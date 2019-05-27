@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 import TextArea from "../components/TextArea";
-import ControlPanel from "../components/ControlPanel";
-import LessonArea from "../components/LessonArea";
-const { Consumer, Provider } = React.createContext();
+import ControlPanel from "./ControlPanel";
+import LessonArea from "./LessonArea";
+import {Consumer, Provider} from "../util/context"
 const StateProvider = Provider;
 const StateConsumer = Consumer;
 class TypingTutor extends Component {
 	
 	state = {
-        lessonsActive: false
+        lessonsActive: true
     }
 	
 	
 	render() {
-	   console.log(StateProvider)
+    
 		return (
 		  <StateProvider value={this.state}>
             <StateConsumer>
             {({lessonsActive}) => (
 		      <section>
+               
                 <TextArea />
-                <ControlPanel />
+              
+                <ControlPanel value={lessonsActive}/>
                 <LessonArea />
               </section>
             )}

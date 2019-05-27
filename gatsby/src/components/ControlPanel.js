@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-const { Consumer, Provider } = React.createContext();
-const StateProvider = Provider;
+import {Consumer} from "../util/context"
+
 const StateConsumer = Consumer;
 
 class ControlPanel extends Component {
@@ -8,6 +8,7 @@ class ControlPanel extends Component {
 	
 	handleButtonClick = () => {
 			//this.props.lessonsMenu();
+       
 		}
 	
 	
@@ -22,7 +23,7 @@ class ControlPanel extends Component {
 		
 		return (
 		<StateConsumer>
-           {(lessonsActive) => (
+           {(value) => (
            
 		<div className="controlPanel">
 		<button id="LessonButton" className="lessonButton" onMouseDown={this.handleButtonClick}>Lessons</button>
