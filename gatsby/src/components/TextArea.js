@@ -26,8 +26,6 @@ class TextArea extends Component {
     
     componentDidMount() {
         
-       
-        
         let currentLesson = this.state.currentLesson;	
 		
         //need new way to find used value

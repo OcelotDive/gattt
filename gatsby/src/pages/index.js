@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 
+import TypingTutor from "../components/TypingTutor";
 
-import TextArea from "../components/TextArea"
 const IndexPage = () => (
+    
   <div>
-    <TextArea />
+    <TypingTutor />
   </div>
 )
 
