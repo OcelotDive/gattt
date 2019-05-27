@@ -798,11 +798,11 @@ body {
 
 }
 
-.innerTextBox >  p span {
+.innerTextBox div > span {
     background: yellow;
 }
 
-.innerTextBox > p strong {
+.innerTextBox div > strong {
     background: red;
 }
 
