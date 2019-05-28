@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import {Consumer} from "../util/context"
+import {TypingContext} from "../util/Context";
 
-const StateConsumer = Consumer;
+
 
 class ControlPanel extends Component {
 	
 	
 	handleButtonClick = () => {
 			//this.props.lessonsMenu();
-       
+        
 		}
 	
 	
@@ -19,18 +19,21 @@ class ControlPanel extends Component {
 	
 	render() {
 	
-	
+
 		
 		return (
-		<StateConsumer>
-           {(value) => (
-           
+          
+        
+          
+        <TypingContext.Consumer>
+            {(context) => (
 		<div className="controlPanel">
-		<button id="LessonButton" className="lessonButton" onMouseDown={this.handleButtonClick}>Lessons</button>
+		<button id="LessonButton" className="lessonButton" onMouseDown={this.handleButtonClick}>{}</button>
 		<button id="ResetButton" className="lessonButton" onMouseDown={this.handleButtonReset}>Restart</button>	
 		</div>
-            )}
-		</StateConsumer>
+           )}
+        </ TypingContext.Consumer>
+
 		)
 	}
 }

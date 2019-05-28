@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+
 import TextArea from "../components/TextArea";
 import ControlPanel from "./ControlPanel";
 import LessonArea from "./LessonArea";
-import {Consumer, Provider} from "../util/context"
-const StateProvider = Provider;
-const StateConsumer = Consumer;
+import {TypingContext} from "../util/Context";
 class TypingTutor extends Component {
 	
 	state = {
@@ -15,19 +14,20 @@ class TypingTutor extends Component {
 	render() {
     
 		return (
-		  <StateProvider value={this.state}>
-            <StateConsumer>
-            {({lessonsActive}) => (
+		  <TypingContext.Provider value={this.state.lessonsActive}>
+            <TypingContext.Consumer>
+            {(context) => (
+          
 		      <section>
                
                 <TextArea />
-              
-                <ControlPanel value={lessonsActive}/>
+                
+                <ControlPanel />
                 <LessonArea />
               </section>
             )}
-            </StateConsumer>
-          </StateProvider>
+            </TypingContext.Consumer>
+          </TypingContext.Provider>
 		)
 	}
 }

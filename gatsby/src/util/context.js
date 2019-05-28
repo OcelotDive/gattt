@@ -1,4 +1,2 @@
-import React from 'react'
-
-export const { Consumer, Provider } = React.createContext()
-
+import React from "react";
+export const TypingContext = React.createContext({});
