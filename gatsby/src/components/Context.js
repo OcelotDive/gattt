@@ -20,7 +20,9 @@ class TypingConsumer extends Component {
 render() {
     return (
         <Context.Consumer>
-        {this.props.children}
+   
+       {this.props.children}
+       
         </Context.Consumer>
     )
 }

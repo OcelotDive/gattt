@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Context} from "../util/Context";
-
+import {TypingConsumer} from "./Context";
 
 
 class ControlPanel extends Component {
@@ -26,12 +25,14 @@ class ControlPanel extends Component {
         
           
      
-          
+       <TypingConsumer>
+            {(context)=> (
 		<div className="controlPanel">
-		<button id="LessonButton" className="lessonButton" onMouseDown={this.handleButtonClick}>Lessons</button>
+		<button id="LessonButton" className="lessonButton" onMouseDown={this.handleButtonClick}>{context.state.test}</button>
 		<button id="ResetButton" className="lessonButton" onMouseDown={this.handleButtonReset}>Restart</button>	
 		</div>
-          
+            )}
+        </TypingConsumer>
       
 
 		)
