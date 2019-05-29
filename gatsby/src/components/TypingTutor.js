@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import TextArea from "../components/TextArea";
 import ControlPanel from "./ControlPanel";
 import LessonArea from "./LessonArea";
-import TypingProvider from "./Context";
+import {TypingProvider} from "./Context";
 
 class TypingTutor extends Component {
 	
@@ -17,13 +17,13 @@ class TypingTutor extends Component {
 		return (
 		 
         
-          
+          <TypingProvider>
 		      <section>
                 <TextArea />
                 <ControlPanel />
                 <LessonArea />
               </section>
-          
+          </TypingProvider>
             
          
 		)

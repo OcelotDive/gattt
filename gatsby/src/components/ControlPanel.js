@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {TypingContext} from "../util/Context";
+import {Context} from "../util/Context";
 
 
 
@@ -26,9 +26,9 @@ class ControlPanel extends Component {
         
           
      
-           
+          
 		<div className="controlPanel">
-		<button id="LessonButton" className="lessonButton" onMouseDown={()=>{this.handleButtonClick}}>{Lessons}</button>
+		<button id="LessonButton" className="lessonButton" onMouseDown={this.handleButtonClick}>Lessons</button>
 		<button id="ResetButton" className="lessonButton" onMouseDown={this.handleButtonReset}>Restart</button>	
 		</div>
           

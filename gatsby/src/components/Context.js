@@ -1,16 +1,32 @@
 import React, { Component } from 'react';
 const Context = React.createContext();
 
-class TypingContext extends Component {
+class TypingProvider extends Component {
     state = {
         test: "test"
     }
 render() {
     return (
-        <Context.Provider>
-        {this.props.chidren}
+        <Context.Provider value={{state: this.state}}>
+        {this.props.children}
         </Context.Provider>
     )
 }
 }
-export default TypingContext;
+
+
+class TypingConsumer extends Component {
+    
+render() {
+    return (
+        <Context.Consumer>
+        {this.props.children}
+        </Context.Consumer>
+    )
+}
+}
+export  {TypingProvider}
+export {TypingConsumer}
+
+
+
