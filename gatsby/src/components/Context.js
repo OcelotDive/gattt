@@ -3,7 +3,7 @@ const Context = React.createContext();
 
 class TypingProvider extends Component {
     state = {
-        lessonsActive: true
+        lessonsActive: false
     }
 render() {
     return (

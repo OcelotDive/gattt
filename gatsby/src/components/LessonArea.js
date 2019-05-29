@@ -16,7 +16,7 @@ class LessonArea extends Component {
         
     }
     
-	
+
 	startLesson = (e) => {
 		
 		let lessonNumber = e.target.id;
@@ -34,18 +34,18 @@ class LessonArea extends Component {
 		
 		
 		
-		let lessonAreaClass = this.state.lessonsActive ? 'lessonArea bounceInDown' : 'lessonArea bounceOutUp';
+		
 		
       
 		return (
         
 		this.state.flagSelect1 === 'usLayout flagHighlighted' ?
         <TypingConsumer>
-            {(context) => (    
-		<section className={lessonAreaClass} id="lessonPanel">
+            {({state}) => (    
+		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">
 			
 			<div id="lessonSetOne">
-			
+			{state.lessonsActive}
 			<div className="lessonContainer" id="lessonDiv">
 			<h5 className="lessonTitle" id="Lesson1" data-keys="KeyF,KeyJ,KeyG,KeyH,Space" onClick={this.startLesson}>LESSON 1</h5>
 			<h4>f, j, g, h</h4></div>
@@ -149,8 +149,8 @@ class LessonArea extends Component {
         </TypingConsumer>
 		:
         <TypingConsumer>
-            {(context) => (
-		<section className={lessonAreaClass} id="lessonPanel">
+            {({state}) => (
+		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">
 			
 			<div id="lessonSetOne">
 			

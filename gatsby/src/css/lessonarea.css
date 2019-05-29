@@ -108,30 +108,9 @@ h4 {
 }
 
 
-@-webkit-keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-40px);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-    }
-}
 
-/* Standard syntax */
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@-webkit-keyframes bounceInDown {
+@-webkit-keyframes dropDown {
   from,
   60%,
   75%,
@@ -169,7 +148,7 @@ h4 {
   }
 }
 
-@keyframes bounceInDown {
+@keyframes dropDown {
   from,
   60%,
   75%,
@@ -207,13 +186,13 @@ h4 {
   }
 }
 
-.bounceInDown {
-  -webkit-animation-name: bounceInDown;
-  animation-name: bounceInDown;
+.dropDown {
+  -webkit-animation-name: dropDown;
+  animation-name: dropDown;
   animation-duration: 1s;
 }
 
-@-webkit-keyframes bounceOutUp {
+@-webkit-keyframes liftUp {
   20% {
     -webkit-transform: translate3d(0, -10px, 0);
     transform: translate3d(0, -10px, 0);
@@ -233,7 +212,7 @@ h4 {
   }
 }
 
-@keyframes bounceOutUp {
+@keyframes liftUp {
   20% {
     -webkit-transform: translate3d(0, -10px, 0);
     transform: translate3d(0, -10px, 0);
@@ -253,8 +232,8 @@ h4 {
   }
 }
 
-.bounceOutUp {
-  -webkit-animation-name: bounceOutUp;
-  animation-name: bounceOutUp;
+.liftUp {
+  -webkit-animation-name: liftUp;
+  animation-name: liftUp;
   animation-duration: 1s;
 }

@@ -8,6 +8,7 @@ class ControlPanel extends Component {
 	handleButtonClick = (lessonsOnOff) => {
 			//this.props.lessonsMenu();
             lessonsOnOff();
+        
 		}
 	
 	
