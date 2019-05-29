@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {TypingConsumer} from "./Context";
 
 
 
@@ -40,7 +40,9 @@ class LessonArea extends Component {
 		return (
         
 		this.state.flagSelect1 === 'usLayout flagHighlighted' ?
-		<section className={lessonAreaClass} id="lessonPanel" ref="lessonMain">
+        <TypingConsumer>
+            {(context) => (    
+		<section className={lessonAreaClass} id="lessonPanel">
 			
 			<div id="lessonSetOne">
 			
@@ -141,11 +143,14 @@ class LessonArea extends Component {
 			<h4>Full Keyboard</h4></div>	
 			</div>
 				
-				
-		</section>
-		:
 			
-		<section className={lessonAreaClass} id="lessonPanel" ref="lessonMain">
+		</section>
+        	 )}
+        </TypingConsumer>
+		:
+        <TypingConsumer>
+            {(context) => (
+		<section className={lessonAreaClass} id="lessonPanel">
 			
 			<div id="lessonSetOne">
 			
@@ -249,8 +254,9 @@ class LessonArea extends Component {
 			
 			
 		
-		</section>	
-
+		</section>
+        )}
+        </TypingConsumer>
 		)
 	}
 }

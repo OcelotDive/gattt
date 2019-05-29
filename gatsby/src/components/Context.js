@@ -3,11 +3,14 @@ const Context = React.createContext();
 
 class TypingProvider extends Component {
     state = {
-        test: "test"
+        lessonsActive: true
     }
 render() {
     return (
-        <Context.Provider value={{state: this.state}}>
+        <Context.Provider value={{state: this.state,
+        lessonsOnOff: () => this.setState({lessonsActive: !this.state.lessonsActive})
+}}>
+
         {this.props.children}
         </Context.Provider>
     )

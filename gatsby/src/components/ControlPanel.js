@@ -5,9 +5,9 @@ import {TypingConsumer} from "./Context";
 class ControlPanel extends Component {
 	
 	
-	handleButtonClick = (val) => {
+	handleButtonClick = (lessonsOnOff) => {
 			//this.props.lessonsMenu();
-      
+            lessonsOnOff();
 		}
 	
 	
@@ -28,7 +28,7 @@ class ControlPanel extends Component {
        <TypingConsumer>
             {(context)=> (
 		<div className="controlPanel">
-		<button id="LessonButton" className="lessonButton" onMouseDown={this.handleButtonClick}>{context.state.test}</button>
+		<button id="LessonButton" className="lessonButton" onMouseDown={()=>this.handleButtonClick(context.lessonsOnOff)}>Lessons</button>
 		<button id="ResetButton" className="lessonButton" onMouseDown={this.handleButtonReset}>Restart</button>	
 		</div>
             )}
