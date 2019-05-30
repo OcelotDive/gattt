@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import keyboardOPS from "../util/keyboardOPS";
 const Context = React.createContext();
 
 class TypingProvider extends Component {
     state = {
-        lessonsActive: false
+        lessonsActive: false,
+        timeOn: false
     }
 render() {
     
     return (
         <Context.Provider value={{state: this.state,
-        lessonsOnOff: () => this.setState({lessonsActive: !this.state.lessonsActive})
+        lessonsOnOff: () => this.setState({lessonsActive: !this.state.lessonsActive}),
+        classChange: ((id, capsDown) => console.log(id))
 }}>
         {this.props.children}
         </Context.Provider>
