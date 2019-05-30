@@ -122,8 +122,8 @@ h4 {
 
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -3000px, 0);
-    transform: translate3d(0, -3000px, 0);
+    -webkit-transform: translate3d(0, -5000px, 0);
+    transform: translate3d(0, -5000px, 0);
   }
 
   60% {
@@ -160,8 +160,8 @@ h4 {
 
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -3000px, 0);
-    transform: translate3d(0, -3000px, 0);
+    -webkit-transform: translate3d(0, -5000px, 0);
+    transform: translate3d(0, -5000px, 0);
   }
 
   60% {
@@ -190,6 +190,9 @@ h4 {
   -webkit-animation-name: dropDown;
   animation-name: dropDown;
   animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
 }
 
 @-webkit-keyframes liftUp {
@@ -207,8 +210,9 @@ h4 {
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0);
+    -webkit-transform: translate3d(0, -5000px, 0);
+    transform: translate3d(0, -5000px, 0);
+       visibility: hidden;
   }
 }
 
@@ -227,8 +231,9 @@ h4 {
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0);
+    -webkit-transform: translate3d(0, -5000px, 0);
+    transform: translate3d(0, -5000px, 0);
+      visibility: hidden;
   }
 }
 
@@ -236,4 +241,10 @@ h4 {
   -webkit-animation-name: liftUp;
   animation-name: liftUp;
   animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
+
+
+
+

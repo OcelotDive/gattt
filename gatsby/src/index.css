@@ -5,7 +5,7 @@
 @import url("css/instructions.css");
 @import url("css/finish.css");
 @import url("css/keyboardSelect.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css");
+
 
 html {
     height: 100%;
@@ -43,7 +43,7 @@ body {
     top: 350px;
     width: 700px;
     height: 325px;
-
+    font-size: 12pt;
     padding: 10px;
 
     z-index: 100;
@@ -88,6 +88,10 @@ body {
     visibility: hidden;
 }
 
+.row1, .row2, .row3, .row4, .row5 {
+    height: 47px;
+    line-height: 140%;
+}
 .mainKey {
     display: inline-block;
     width: 45px;
@@ -658,8 +662,9 @@ body {
 
 }
 
-.row1 {
-    margin-top: 20px;
+hr {
+    margin-bottom: 10px;
+    background: aliceblue;
 }
 
 .capsLight1 {

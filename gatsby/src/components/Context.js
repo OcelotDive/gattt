@@ -6,11 +6,11 @@ class TypingProvider extends Component {
         lessonsActive: false
     }
 render() {
+    
     return (
         <Context.Provider value={{state: this.state,
         lessonsOnOff: () => this.setState({lessonsActive: !this.state.lessonsActive})
 }}>
-
         {this.props.children}
         </Context.Provider>
     )
