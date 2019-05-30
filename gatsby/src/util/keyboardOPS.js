@@ -243,8 +243,9 @@ const keyboardOperations = {
 		
 		state.firstKeyPress = false;
 	},
-	keyboardKeyPress: (state, action) => {
+	keyboardKeyPress: (id,capsDown, state) => {
 		//start timer
+        alert(state.lessonKeys)
 		state.timeOn = true;
 		//return className to default after any key press (coloured keys)
 		state.lessonKeys.map((_, i, a) => {

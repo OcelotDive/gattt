@@ -13,16 +13,16 @@ class Keyboard extends Component {
 			let keyboardClass = this.props.keyboardIsOn ? 'keyboard' : 'keyboardOff';
 		return (
         <TypingConsumer>
-            {({state}) => (
+            {(context) => (
 		 <div className={'keyboard'}>
 			<hr/>
 			<hr/>
-            {state.timeOn.toString()}
+            
 			<span className="h7" style={{color: 'white'}}>FILCO</span>
 			<div className={capOnoff} id="capsLight1"></div>
 			<div className="capsLight2" id="capsLight2"></div>
             
-			<Row1 state={state}/>
+			<Row1 context={context}/>
 			<Row2 />
 			<Row3 />
 			<Row4 />

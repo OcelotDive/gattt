@@ -27,10 +27,10 @@ class Row1 extends Component {
         return false;
     }
 		
-   let  currentKey = document.getElementById(e.code)
+   let  currentKey = document.getElementById(e.code) // remove this when no longer needed
     
 
-	//this.props.classChange(currentKey, capsDown);	
+	this.props.context.classChange(currentKey, capsDown);	
 	}
 		
 	
@@ -294,7 +294,7 @@ class Row1 extends Component {
 			</div>
 			:
 			<div className="row1">
-            {this.props.state.timeOn.toString()}
+           
 			<div className="mainKey" id="Backquote" val="ˋ" secval="¬">
 			¬<br/>
 			{"`"}

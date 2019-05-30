@@ -5,14 +5,18 @@ const Context = React.createContext();
 class TypingProvider extends Component {
     state = {
         lessonsActive: false,
+        lessonKeys: ["keyS", "KeyA"],
         timeOn: false
     }
 render() {
-    
+        const state = this.state;
     return (
         <Context.Provider value={{state: this.state,
         lessonsOnOff: () => this.setState({lessonsActive: !this.state.lessonsActive}),
-        classChange: ((id, capsDown) => console.log(id))
+        classChange: ((id, capsDown) => {
+            
+           return keyboardOPS.keyboardKeyPress(id, capsDown,  this.state)
+        })
 }}>
         {this.props.children}
         </Context.Provider>
