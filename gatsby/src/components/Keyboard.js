@@ -17,12 +17,12 @@ class Keyboard extends Component {
 		 <div className={'keyboard'}>
 			<hr/>
 			<hr/>
+            {state.timeOn.toString()}
 			<span className="h7" style={{color: 'white'}}>FILCO</span>
 			<div className={capOnoff} id="capsLight1"></div>
 			<div className="capsLight2" id="capsLight2"></div>
             
-			<Row1 />
-          
+			<Row1 state={state}/>
 			<Row2 />
 			<Row3 />
 			<Row4 />
@@ -30,7 +30,7 @@ class Keyboard extends Component {
 			<hr/>
             <hr/>
 		 </div>
-          )}
+               )}
         </TypingConsumer>    
 		
 		)
