@@ -4,18 +4,34 @@ const Context = React.createContext();
 
 class TypingProvider extends Component {
     state = {
+        currentLesson: "This is a test",
+        usedString: '',
         lessonsActive: false,
-        lessonKeys: ["keyS", "KeyA"],
+        lessonKeys: ["KeyS", "KeyA"],
+        currentClass: '',
+        classChange: '',
+        mistakes: [],
+        mistakesLength: 0,
+        mistakesTemp: null,
+        letterCorrect: false,
+        isFirstKeyPress: true,
+        capsOnOff: false,
+        shiftOnOff: false,
+        currentKey: '',
         timeOn: false
     }
 render() {
         const state = this.state;
     return (
         <Context.Provider value={{state: this.state,
+        
         lessonsOnOff: () => this.setState({lessonsActive: !this.state.lessonsActive}),
         classChange: ((id, capsDown) => {
-            
-           return keyboardOPS.keyboardKeyPress(id, capsDown,  this.state)
+            this.setState((currentState) => {   
+          currentState = keyboardOPS.keyboardKeyPress(id, capsDown,  this.state);
+                console.log(currentState)
+                return currentState;
+            })
         })
 }}>
         {this.props.children}
