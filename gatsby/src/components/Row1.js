@@ -17,20 +17,18 @@ class Row1 extends Component {
         
 	    const capsDown = e.getModifierState("CapsLock");
 
-        const unUsedKeys = [27,112,113,114,115,116,117,118,119,120,121,122,123,145,19,45,36,33,46,35,34,38,17,18,91,93,37,40,39,144,111,106,109,103,104,105,100,101,102,97,98,99,96,110,107,17,18,91,93];
-      
-        
-       
-        		
-	if (unUsedKeys.includes(e.code)) {
-        
+        const unUsedKeys = [27,112,113,114,115,116,117,118,119,120,121,122,123,145,19,45,
+                           36,33,46,35,34,38,17,18,91,93,37,40,39,144,111,106,109,103,104,
+                           105,100,101,102,97,98,99,96,110,107,17,18,91,93];
+    		
+	    if (unUsedKeys.includes(e.code)) { 
         return false;
-    }
+        }
 		
-   let  currentKey = document.getElementById(e.code) // remove this when no longer needed
+        let  currentKey = document.getElementById(e.code) // remove this when no longer needed
     
 
-	this.props.context.classChange(currentKey, capsDown);	
+	   this.props.context.classChange(currentKey, capsDown);	
 	}
 		
 	
@@ -40,199 +38,24 @@ class Row1 extends Component {
 	
 	handleKeyUp = (e) => {
 		
-        let capsDown = e.getModifierState("CapsLock");
-		//unneeded keys
-	if(e.keyCode === 27 || e.keyCode === 112 || e.keyCode === 113 || e.keyCode === 114 || e.keyCode === 115 || e.keyCode === 116 || e.keyCode === 117 || e.keyCode === 118 || e.keyCode === 119 || e.keyCode === 120 || e.keyCode === 121 || e.keyCode === 122 || e.keyCode === 123 || e.keyCode === 145 || e.keyCode === 19 || e.keyCode === 45 || e.keyCode === 36 || e.keyCode === 33 || e.keyCode === 46 || e.keyCode === 35 || e.keyCode === 34 || e.keyCode === 38 || e.keyCode === 17 || e.keyCode === 18 || e.keyCode === 91 || e.keyCode === 93 || e.keyCode === 37 || e.keyCode === 40 || e.keyCode === 39 || e.keyCode === 144 || e.keyCode === 111 || e.keyCode === 106 || e.keyCode === 109 || e.keyCode === 103 || e.keyCode === 104 || e.keyCode === 105 || e.keyCode === 100 || e.keyCode === 101 || e.keyCode === 102 || e.keyCode === 97 || e.keyCode === 98 || e.keyCode === 99 || e.keyCode === 96 || e.keyCode === 110 || e.keyCode === 107 || e.keyCode === 17 || e.keyCode === 18 || e.keyCode === 91 || e.keyCode === 93){
-		return false;
-	}
-	else if (e.code){
-	let releasedKey = document.getElementById(e.code);
-	this.props.classChangeOff(releasedKey, capsDown);
+    const capsDown = e.getModifierState("CapsLock");
+		
+	
+	if (e.code){
+	const releasedKey = document.getElementById(e.code);
+	this.props.context.classChangeOff(releasedKey, capsDown);
 		}
-	else{
-		let releasedKey;
-		if(e.keyCode === 16 && e.location === 1) releasedKey = document.getElementById("ShiftLeft");
-		if(e.keyCode === 16 && e.location === 2) releasedKey = document.getElementById("ShiftRight");
-		switch (e.keyCode) {
-				case 223:
-					releasedKey = document.getElementById("Backquote");
-					break;
-				case 49:
-					releasedKey = document.getElementById("Digit1");
-					break;
-				case 50:
-					releasedKey = document.getElementById("Digit2");
-					break;
-				case 51:
-					releasedKey = document.getElementById("Digit3");
-					break;
-				case 52:
-					releasedKey = document.getElementById("Digit4");
-					break;
-				case 53:
-					releasedKey = document.getElementById("Digit5");
-					break;
-				case 54:
-					releasedKey = document.getElementById("Digit6");
-					break;
-				case 55:
-					releasedKey = document.getElementById("Digit7");
-					break;
-				case 56:
-					releasedKey = document.getElementById("Digit8");
-					break;
-				case 57:
-					releasedKey = document.getElementById("Digit9");
-					break;
-				case 48:
-					releasedKey = document.getElementById("Digit0");
-					break;
-				case 189:
-					releasedKey = document.getElementById("Minus");
-					break;
-				case 187:
-					releasedKey = document.getElementById("Equal");
-					break;
-				//row 2
-				case 9:
-					releasedKey = document.getElementById("Tab");
-					break;
-				case 81:
-					releasedKey = document.getElementById("KeyQ");
-					break;
-				case 87:
-					releasedKey = document.getElementById("KeyW");
-					break;
-				case 69:
-					releasedKey = document.getElementById("KeyE");
-					break;
-				case 82:
-					releasedKey = document.getElementById("KeyR");
-					break;
-				case 84:
-					releasedKey = document.getElementById("KeyT");
-					break;
-				case 89:
-					releasedKey = document.getElementById("KeyY");
-					break;
-				case 85:
-					releasedKey = document.getElementById("KeyU");
-					break;
-				case 73:
-					releasedKey = document.getElementById("KeyI");
-					break;
-				case 79:
-					releasedKey = document.getElementById("KeyO");
-					break;
-				case 80:
-					releasedKey = document.getElementById("KeyP");
-					break;
-				case 219:
-					releasedKey = document.getElementById("BracketLeft");
-					break;
-				case 221:
-					releasedKey = document.getElementById("BracketRight");
-					break;
-				case 13:
-					releasedKey = document.getElementById("Enter");
-					break;
-				//third row
-				case 20:
-					releasedKey = document.getElementById("CapsLock");
-					break;
-				case 65:
-					releasedKey = document.getElementById("KeyA");
-					break;
-				case 83:
-					releasedKey = document.getElementById("KeyS");
-					break;
-				case 68:
-					releasedKey = document.getElementById("KeyD");
-					break;
-				case 70:
-					releasedKey = document.getElementById("KeyF");
-					break;
-				case 71:
-					releasedKey = document.getElementById("KeyG");
-					break;
-				case 72:
-					releasedKey = document.getElementById("KeyH");
-					break;
-				case 74:
-					releasedKey = document.getElementById("KeyJ");
-					break;
-				case 75:
-					releasedKey = document.getElementById("KeyK");
-					break;
-				case 76:
-					releasedKey = document.getElementById("KeyL");
-					break;
-				case 186:
-					releasedKey = document.getElementById("Semicolon");
-					break;
-				case 192:
-					releasedKey = document.getElementById("Quote");
-					break;
-				case 222:
-					releasedKey = document.getElementById("Backslash");
-					break;
-				//row 4
-			
-				case 220:
-					releasedKey = document.getElementById("IntlBackslash");
-					break;
-				case 90:
-					releasedKey = document.getElementById("KeyZ");
-					break;
-				case 88:
-					releasedKey = document.getElementById("KeyX");
-					break;
-				case 67:
-					releasedKey = document.getElementById("KeyC");
-					break;
-				case 86:
-					releasedKey = document.getElementById("KeyV");
-					break;
-				case 66:
-					releasedKey = document.getElementById("KeyB");
-					break;
-				case 78:
-					releasedKey = document.getElementById("KeyN");
-					break;
-				case 77:
-					releasedKey = document.getElementById("KeyM");
-					break;
-				case 188:
-					releasedKey = document.getElementById("Comma");
-					break;
-				case 190:
-					releasedKey = document.getElementById("Period");
-					break;
-				case 191:
-					releasedKey = document.getElementById("Slash");
-					break;
-				case 32:
-					releasedKey = document.getElementById("Space");
-					break;
-				
-			    default:
-				break;
 
-
-			}
-		
-		this.props.classChangeOff(releasedKey, capsDown);
-		
-	}	
 		
 	}
 	
 	
 	
 	render() {
-
+            console.log(this.props.context.state.flagSelect1);
 		return (
-			this.props.flagSelect1 === 'usLayout flagHighlighted' ?
+          
+			this.props.context.state.flagSelect1 === 'usLayout flagHighlighted' ?
 			
 			<div className="row1">
 			<div className="mainKey" id="Backquote" val="ˋ" secval="~">

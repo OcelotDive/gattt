@@ -18,7 +18,8 @@ class TypingProvider extends Component {
         capsOnOff: false,
         shiftOnOff: false,
         currentKey: '',
-        timeOn: false
+        timeOn: false,
+        flagSelect1: 'usLayout flagHighlighted'
     }
 render() {
         const state = this.state;
@@ -32,6 +33,9 @@ render() {
                 console.log(currentState)
                 return currentState;
             })
+        }),
+        classChangeOff: ((releasedKey, capsDown) => {
+            alert("OFF")
         })
 }}>
         {this.props.children}
