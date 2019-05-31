@@ -31,7 +31,7 @@ class Row1 extends Component {
 	   this.props.context.classChange(currentKey, capsDown);	
 	}
 		
-	
+	row
 	
 	
 	
@@ -52,7 +52,7 @@ class Row1 extends Component {
 	
 	
 	render() {
-            console.log(this.props.context.state.flagSelect1);
+            
 		return (
           
 			this.props.context.state.flagSelect1 === 'usLayout flagHighlighted' ?
@@ -117,7 +117,6 @@ class Row1 extends Component {
 			</div>
 			:
 			<div className="row1">
-           
 			<div className="mainKey" id="Backquote" val="ˋ" secval="¬">
 			¬<br/>
 			{"`"}
