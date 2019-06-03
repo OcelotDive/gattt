@@ -34,8 +34,13 @@ render() {
                 return currentState;
             })
         }),
-        classChangeOff: ((releasedKey, capsDown) => {
-            alert("OFF")
+        classChangeOff: ((key, capsDown) => {
+            this.setState((currentState) => {
+            currentState = keyboardOPS.keyboardKeyRelease(key, capsDown, this.state);
+                console.log(currentState);
+                return currentState;
+                
+            })
         })
 }}>
         {this.props.children}
