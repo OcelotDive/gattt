@@ -154,14 +154,14 @@ const keyboardOperations = {
 				state
 			}
 		}
-
+    
 		//test for shift release
 		if (key.id === 'ShiftLeft' || key.id === 'ShiftRight') {
 			state.shiftOnOff = false;
 		}
 
 		// test for shift classes due to update of current key whilst shift held down
-		if (key.id === 'ShiftLeft' && state.flagSelect1 === 'usLayout flagHighlighted') {
+		if (key.id === 'ShiftLeft' && state.boardSelect === 'us') {
 			key.className = 'shiftFullUSLeft';
 			state.currentKey = null;
 
@@ -182,12 +182,12 @@ const keyboardOperations = {
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'Enter' && state.flagSelect2 === 'ukLayout flagHighlighted') {
+		else if (key.id === 'Enter' && state.boardSelect === 'uk') {
 			key.className = 'enterKey';
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'Enter' && state.flagSelect1 === 'usLayout flagHighlighted') {
+		else if (key.id === 'Enter' && state.boardSelect === 'us') {
 			key.className = 'usEnter';
 			state.currentKey = null;
 		} 
@@ -197,40 +197,41 @@ const keyboardOperations = {
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'Tab' && state.flagSelect2 === 'ukLayout flagHighlighted') {
+		else if (key.id === 'Tab' && state.boardSelect === 'uk') {
 			key.className = 'doubleKey';
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'Tab' && state.flagSelect1 === 'usLayout flagHighlighted') {
+		else if (key.id === 'Tab' && state.boardSelect === 'us') {
 			key.className = 'usTabKey';
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'CapsLock' && state.firstKeyPress === false) {
+		else if (key.id === 'CapsLock' && state.isFirstKeyPress === false) {
 			key.className = state.capsOnOff ? 'doubleKeyandAbitOn' : 'doubleKeyandAbit';
 			state.capsOnOff = state.capsOnOff;
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'CapsLock' && state.firstKeyPress === true && capsDown === false) {
+		else if (key.id === 'CapsLock' && state.isFirstKeyPress === true && capsDown === false) {
+       
 			key.className = 'doubleKeyandAbit';
 			state.capsOnOff = false;
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'CapsLock' && state.firstKeyPress === true && capsDown === true) {
+		else if (key.id === 'CapsLock' && state.isFirstKeyPress === true && capsDown === true) {
 			key.className = 'doubleKeyandAbitOn';
 			state.capsOnOff = true;
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'IntlBackslash' && state.flagSelect1 === 'usLayout flagHighlighted') {
+		else if (key.id === 'IntlBackslash' && state.boardSelect === 'us') {
 			key.className = 'usBackSlash';
 			state.currentKey = null;
 		} 
 		
-		else if (key.id === 'Backslash' && state.flagSelect2 === 'ukLayout flagHighlighted') {
+		else if (key.id === 'Backslash' && state.boardSelect === 'uk') {
 			key.className = 'mainKey specialKeyRule';
 			state.currentKey = null;
 		} 
@@ -241,7 +242,7 @@ const keyboardOperations = {
 
 		}
 		
-		state.firstKeyPress = false;
+		state.isFirstKeyPress= false;
         return state;
 	},
     
@@ -305,8 +306,8 @@ const keyboardOperations = {
 		}
 		//if caps already on
 		if (alpha && capsDown && state.isFirstKeyPress === true) {
-         console.log(id.attributes[3])
-			state.currentKey = id.attributes[3]
+         console.log(key.attributes[3])
+			state.currentKey = key.attributes[3]
 			let caps = document.getElementById("CapsLock");
 			caps.className = 'doubleKeyandAbitOn';
 			state.capsOnOff = true;
@@ -319,7 +320,7 @@ const keyboardOperations = {
 		}
         // if not alpha key and not caps and caps down
 		if (!alpha && capsDown && state.isFirstKeyPress === true) {
-			state.currentKey = id.attributes[2]
+			state.currentKey = key.attributes[2]
 			let caps = document.getElementById("CapsLock");
 			caps.className = 'doubleKeyandAbitOn';
 			state.capsOnOff = true;

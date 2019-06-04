@@ -24,7 +24,7 @@ class Row4 extends Component {
 		let shiftFullOnoff = this.props.shiftOnOff ? 'shiftFullOn' : 'shiftFull';
         let shiftFullOnoffUSLeft = this.props.shiftOnOff ? 'shiftFullOnUSLeft' : 'shiftFullUSLeft'
 		return (
-            this.props.flagSelect1 === 'usLayout flagHighlighted' ?
+            this.props.context.state.boardSelect === 'us' ?
 			<div className="row4">
 			<div className={shiftFullOnoffUSLeft}  id="ShiftLeft" val="null" secval="null">
 			 <br />

@@ -16,7 +16,7 @@ class Row1 extends Component {
 		e.preventDefault();
         
 	    const capsDown = e.getModifierState("CapsLock");
-
+        
         const unUsedKeys = [27,112,113,114,115,116,117,118,119,120,121,122,123,145,19,45,
                            36,33,46,35,34,38,17,18,91,93,37,40,39,144,111,106,109,103,104,
                            105,100,101,102,97,98,99,96,110,107,17,18,91,93];
@@ -55,7 +55,7 @@ class Row1 extends Component {
             
 		return (
           
-			this.props.context.state.flagSelect1 === 'usLayout flagHighlighted' ?
+			this.props.context.state.boardSelect === 'us' ?
 			
 			<div className="row1">
 			<div className="mainKey" id="Backquote" val="ˋ" secval="~">
@@ -178,23 +178,6 @@ class Row1 extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {
-		flagSelect1: state.flagSelect1,
-		flagSelect2: state.flagSelect2
 
-	
-	}
-}
-
-const mapDispatchToProps = (dispatch) => {
-	return {
-		typeAdd: (value) => {dispatch({type: 'TYPEADD', value: value})},
-		deleteChar: () => {dispatch({type: 'DELETE'})},
-		classChange: (id, capsDown) => {dispatch({type: 'PRESSED', id: id, capsDown: capsDown})},
-		classChangeOff: (id, capsDown) => {dispatch({type: 'RELEASED', id: id, capsDown: capsDown})}
-		
-	}
-}
 
 export default Row1;

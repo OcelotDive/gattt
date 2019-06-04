@@ -20,7 +20,7 @@ class Row2 extends Component {
 	render() {
 
 		return (
-			this.props.flagSelect1 === 'usLayout flagHighlighted' ?
+			this.props.context.state.boardSelect === 'us' ?
 			<div className="row2">
 			<div className="usTabKey" id="Tab" val="   " secval="   ">
 			 tab<br/>

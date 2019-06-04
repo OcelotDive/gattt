@@ -19,7 +19,7 @@ class TypingProvider extends Component {
         shiftOnOff: false,
         currentKey: '',
         timeOn: false,
-        flagSelect1: 'usLayout flagHighlighted'
+        boardSelect: 'us'
     }
 render() {
         const state = this.state;

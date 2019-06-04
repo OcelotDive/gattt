@@ -13,10 +13,10 @@ class Row3 extends Component {
 		
 		
 		
-		let capOnoff = this.props.capsOnOff ? 'doubleKeyandAbitOn' : 'doubleKeyandAbit'
+		let capOnoff = this.props.context.state.capsOnOff ? 'doubleKeyandAbitOn' : 'doubleKeyandAbit'
 		
 		return (
-			this.props.flagSelect1 === 'usLayout flagHighlighted' ?
+			this.props.context.state.boardSelect === 'us' ?
 			<div className="row3">
 			<div className={capOnoff} id="CapsLock">
 			 <br />

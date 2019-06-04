@@ -23,9 +23,9 @@ class Keyboard extends Component {
 			<div className="capsLight2" id="capsLight2"></div>
             
 			<Row1 context={context}/>
-			<Row2 />
-			<Row3 />
-			<Row4 />
+			<Row2 context={context}/>
+			<Row3 context={context}/>
+			<Row4 context={context}/>
 			<Row5 />
 			<hr/>
             <hr/>
