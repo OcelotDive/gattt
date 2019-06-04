@@ -9,7 +9,6 @@ class TypingProvider extends Component {
         lessonsActive: false,
         lessonKeys: ["KeyS", "KeyA"],
         currentClass: '',
-        classChange: 'keyStruck',
         mistakes: [],
         mistakesLength: 0,
         mistakesTemp: null,

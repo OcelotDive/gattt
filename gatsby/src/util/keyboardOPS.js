@@ -350,7 +350,7 @@ const keyboardOperations = {
 
 		//dealing with the class of the struck key;
 		state.currentClass = key.className;
-		key.className = `${state.currentClass} ${state.classChange}`
+		key.className = `${state.currentClass} keyStruck`
 		
 
 		//setting the current key
