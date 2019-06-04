@@ -4,6 +4,7 @@ import TextArea from "../components/TextArea";
 import ControlPanel from "./ControlPanel";
 import LessonArea from "./LessonArea";
 import Keyboard from "./Keyboard";
+import KeyboardSelect from "./KeyboardSelect";
 import {TypingProvider} from "./Context";
 
 class TypingTutor extends Component {
@@ -22,6 +23,7 @@ class TypingTutor extends Component {
 		      <section>
                 <TextArea />
                 <ControlPanel />
+                <KeyboardSelect />
                 <Keyboard />
                 <LessonArea />
               </section>
