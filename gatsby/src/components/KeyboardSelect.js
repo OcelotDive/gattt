@@ -8,15 +8,13 @@ class KeyboardSelect extends Component {
 	handleFlagClick = (e) => {
         const flag = e.target;
         const flagList = document.querySelectorAll('div[data-img="flagImage"]');
-        flagList.forEach(flagElement => flagElement.classList.remove("flagHighlighted"))
+        flagList.forEach(flagElement => flagElement.classList.remove("flagHighlighted"));
         flag.classList.add("flagHighlighted");
-       
-		
 		}
     
 	
 	keyboardOnOffClick = (e) => {
-		this.props.keyboardOnOff();
+		
 	}
 	
 	
@@ -33,7 +31,7 @@ class KeyboardSelect extends Component {
 			<div className="flagContainer">
 			<div data-img="flagImage" className={"usLayout flagHighlighted"} onMouseDown={this.handleFlagClick}></div>
 			<div data-img="flagImage" className={"ukLayout"} onMouseDown={this.handleFlagClick}></div>
-			<div className="noLayout" onMouseDown={this.keyboardOnOffClick}><br/>{hideOrShow}<br/></div>
+			<div className="noLayout" onMouseDown={this.keyboardOnOffClick}>{hideOrShow}</div>
 			</div>		
 		</section>
 		
@@ -41,16 +39,7 @@ class KeyboardSelect extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {
-		flagSelect1: state.flagSelect1,
-		flagSelect2: state.flagSelect2,
-		activeLesson: state.activeLesson,
-		lessonKeys: state.lessonKeys,
-		keyboardIsOn: state.keyboardIsOn
-	
-	}
-}
+
 
 const mapDispatchToProps = (dispatch) => {
 	return {

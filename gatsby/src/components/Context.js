@@ -18,7 +18,8 @@ class TypingProvider extends Component {
         shiftOnOff: false,
         currentKey: '',
         timeOn: false,
-        boardSelect: 'us'
+        boardSelect: 'us',
+        displayBoard: true
     }
 render() {
         const state = this.state;
@@ -26,20 +27,27 @@ render() {
         <Context.Provider value={{state: this.state,
         
         lessonsOnOff: () => this.setState({lessonsActive: !this.state.lessonsActive}),
-        classChange: ((id, capsDown) => {
+        
+        classChange: (id, capsDown) => {
             this.setState((currentState) => {   
           currentState = keyboardOPS.keyboardKeyPress(id, capsDown,  this.state);
                 console.log(currentState)
-                return currentState;
+                return Object.assign({}, currentState);
             })
-        }),
-        classChangeOff: ((key, capsDown) => {
+        },
+            
+        classChangeOff: (key, capsDown) => {
             this.setState((currentState) => {
             currentState = keyboardOPS.keyboardKeyRelease(key, capsDown, this.state);
                 console.log(currentState);
-                return currentState;
+                return Object.assign({}, currentState);
                 
             })
+        },
+        switchBoardOnOff: (() => {
+           this.setState(()=> ({
+               displayBoard: !this.state.displayBoard
+           }))
         })
 }}>
         {this.props.children}

@@ -10,11 +10,11 @@ class Keyboard extends Component {
 	
 	render() {
 			let capOnoff = this.props.capsOnOff ? 'capsLight1On' : 'capsLight1';
-			let keyboardClass = this.props.keyboardIsOn ? 'keyboard' : 'keyboardOff';
+			
 		return (
         <TypingConsumer>
             {(context) => (
-		 <div className={'keyboard'}>
+		 <div className={context.state.displayBoard ? "keyboard" : "keyboardOff"}>
 			<hr/>
 			<hr/>
             
