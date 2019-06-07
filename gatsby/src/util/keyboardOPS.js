@@ -145,21 +145,21 @@ const keyboardOperations = {
 	
 	keyboardKeyRelease: (key, capsDown, state) => {
 		//return key to unpressed class
-		state.currentKey = null;
-       
+		
+       console.log("%c " + key, "background: black; color: white;")
 		//null return in case unwanted key pressed keeps everything the same
-		if (key.id === null) {
+		if (key === null) {
 			state.currentKey = null;
 			return {
 				state
 			}
 		}
-    
+        
 		//test for shift release
 		if (key.id === 'ShiftLeft' || key.id === 'ShiftRight') {
 			state.shiftOnOff = false;
 		}
-
+        
 		// test for shift classes due to update of current key whilst shift held down
 		if (key.id === 'ShiftLeft' && state.boardSelect === 'us') {
 			key.className = 'shiftFullUSLeft';

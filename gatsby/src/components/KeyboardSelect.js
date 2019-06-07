@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {TypingConsumer} from "./Context";
 
 class KeyboardSelect extends Component {
 	
@@ -13,9 +13,7 @@ class KeyboardSelect extends Component {
 		}
     
 	
-	keyboardOnOffClick = (e) => {
-		
-	}
+	
 	
 	
 	render() {
@@ -25,16 +23,18 @@ class KeyboardSelect extends Component {
 		let hideOrShow = this.props.keyboardIsOn ? 'Hide' : 'Show';
 		
 		return (
-		
-		<section className="keyboardPanel">
+		<TypingConsumer>
+            {(context) => (
+		  <section className="keyboardPanel">
 			<h4 className="keyboardSelectLabel">KEYBOARD LAYOUT</h4>
 			<div className="flagContainer">
 			<div data-img="flagImage" className={"usLayout flagHighlighted"} onMouseDown={this.handleFlagClick}></div>
 			<div data-img="flagImage" className={"ukLayout"} onMouseDown={this.handleFlagClick}></div>
-			<div className="noLayout" onMouseDown={this.keyboardOnOffClick}>{hideOrShow}</div>
+			<div className="noLayout" onMouseDown={context.switchBoardOnOff}>{context.state.displayBoard ? "Hide" : "Show"}</div>
 			</div>		
-		</section>
-		
+		  </section>
+		)}
+        </TypingConsumer>
 		)
 	}
 }
