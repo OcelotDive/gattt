@@ -44,11 +44,16 @@ render() {
                 
             })
         },
-        switchBoardOnOff: (() => {
+        switchBoardOnOff: () => {
            this.setState(()=> ({
                displayBoard: !this.state.displayBoard
            }))
-        })
+        },
+        changeBoardSelect: (layout) => {
+            this.setState(()=> ({
+                boardSelect: layout
+            }))
+        }
 }}>
         {this.props.children}
         </Context.Provider>

@@ -13,15 +13,14 @@ class KeyboardSelect extends Component {
 		}
     
 	
-	
+	componentDidMount() {
+        console.log(this.props.context)
+    }
 	
 	
 	render() {
 	
-		let flagClass1 = this.props.flagSelect1;
-		let flagClass2 = this.props.flagSelect2;
-		let hideOrShow = this.props.keyboardIsOn ? 'Hide' : 'Show';
-		
+
 		return (
 		<TypingConsumer>
             {(context) => (
