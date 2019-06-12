@@ -20,6 +20,7 @@ class TypingProvider extends Component {
         timeOn: false,
         boardSelect: 'us',
         displayBoard: true
+ 
     }
 render() {
         const state = this.state;

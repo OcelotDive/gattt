@@ -13,10 +13,7 @@ class KeyboardSelect extends Component {
 		}
     
 	
-	componentDidMount() {
-        console.log(this.context)
-    }
-	
+
 	
 	render() {
 	
@@ -26,10 +23,13 @@ class KeyboardSelect extends Component {
             {({changeBoardSelect, switchBoardOnOff, state}) => (
 		  <section className="keyboardPanel">
 			<h4 className="keyboardSelectLabel">KEYBOARD LAYOUT</h4>
-			<div className="flagContainer">
-			<div data-img="flagImage" className={"usLayout flagHighlighted"} onMouseUp={this.handleFlagClick} onMouseDown={()=>changeBoardSelect("us")}></div>
+            <div className="flagContainer">
+			
+            <div data-img="flagImage" className={"usLayout flagHighlighted"} onMouseUp={this.handleFlagClick} onMouseDown={()=>changeBoardSelect("us")}></div>
+            
             <div data-img="flagImage" className={"ukLayout"} onMouseUp={this.handleFlagClick} onMouseDown={()=>changeBoardSelect("uk")}></div>
-			<div className="noLayout" onMouseDown={switchBoardOnOff}>{state.displayBoard ? "Hide" : "Show"}</div>
+			
+        <div className="noLayout" onMouseDown={switchBoardOnOff}>{state.displayBoard ? "Hide" : "Show"}</div>
 			</div>		
 		  </section>
 		)}

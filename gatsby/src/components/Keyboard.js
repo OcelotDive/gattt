@@ -9,7 +9,7 @@ class Keyboard extends Component {
 	
 	
 	render() {
-			let capOnoff = this.props.capsOnOff ? 'capsLight1On' : 'capsLight1';
+			
 			
 		return (
         <TypingConsumer>
@@ -19,7 +19,7 @@ class Keyboard extends Component {
 			<hr/>
             
 			<span className="h7" style={{color: 'white'}}>FILCO</span>
-			<div className={capOnoff} id="capsLight1"></div>
+			<div className={context.state.capsOnOff ? 'capsLight1On' : 'capsLight1'} id="capsLight1"></div>
 			<div className="capsLight2" id="capsLight2"></div>
             
 			<Row1 context={context}/>
