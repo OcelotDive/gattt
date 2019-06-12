@@ -5,10 +5,11 @@ import Row3 from './Row3';
 import Row4 from './Row4';
 import Row5 from './Row5';
 import {TypingConsumer} from "./Context";
-class Keyboard extends Component {
+
+const Keyboard = ()=>  {
 	
 	
-	render() {
+
 			
 			
 		return (
@@ -34,15 +35,8 @@ class Keyboard extends Component {
         </TypingConsumer>    
 		
 		)
-	}
+	
 }
-const mapStateToProps = (state) => {
-	return {
-		capsOnOff: state.capsOnOff,
-		keyboardIsOn: state.keyboardIsOn
-	}
-}
-
 
 
 export default Keyboard;

@@ -5,6 +5,7 @@ import ControlPanel from "./ControlPanel";
 import LessonArea from "./LessonArea";
 import Keyboard from "./Keyboard";
 import KeyboardSelect from "./KeyboardSelect";
+import InstructionArea from "./InstructionArea";
 import {TypingProvider} from "./Context";
 
 class TypingTutor extends Component {
@@ -26,6 +27,7 @@ class TypingTutor extends Component {
                 <KeyboardSelect />
                 <Keyboard />
                 <LessonArea />
+                <InstructionArea/>
               </section>
           </TypingProvider>
             
