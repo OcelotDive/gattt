@@ -14,7 +14,7 @@ class KeyboardSelect extends Component {
     
 	
 	componentDidMount() {
-        console.log(this.props.context)
+        console.log(this.context)
     }
 	
 	
@@ -23,13 +23,13 @@ class KeyboardSelect extends Component {
 
 		return (
 		<TypingConsumer>
-            {(context) => (
+            {({changeBoardSelect, switchBoardOnOff, state}) => (
 		  <section className="keyboardPanel">
 			<h4 className="keyboardSelectLabel">KEYBOARD LAYOUT</h4>
 			<div className="flagContainer">
-			<div data-img="flagImage" className={"usLayout flagHighlighted"} onMouseDown={this.handleFlagClick}></div>
-			<div data-img="flagImage" className={"ukLayout"} onMouseDown={this.handleFlagClick}></div>
-			<div className="noLayout" onMouseDown={context.switchBoardOnOff}>{context.state.displayBoard ? "Hide" : "Show"}</div>
+			<div data-img="flagImage" className={"usLayout flagHighlighted"} onMouseUp={this.handleFlagClick} onMouseDown={()=>changeBoardSelect("us")}></div>
+            <div data-img="flagImage" className={"ukLayout"} onMouseUp={this.handleFlagClick} onMouseDown={()=>changeBoardSelect("uk")}></div>
+			<div className="noLayout" onMouseDown={switchBoardOnOff}>{state.displayBoard ? "Hide" : "Show"}</div>
 			</div>		
 		  </section>
 		)}
