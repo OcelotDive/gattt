@@ -5,6 +5,7 @@ const Context = React.createContext();
 class TypingProvider extends Component {
     state = {
         currentLesson: "This is a test",
+        activeLessonNumber: "Lesson1",
         usedString: '',
         lessonsActive: false,
         lessonKeys: ["KeyS", "KeyA"],

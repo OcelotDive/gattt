@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+
 
 
 
@@ -107,4 +107,4 @@ const mapDispatchToProps = (dispatch) => {
 	
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Lesson18Instructions);
+export default Lesson18Instructions;
