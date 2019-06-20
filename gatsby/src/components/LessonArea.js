@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import {TypingConsumer} from "./Context";
-
+import LessonSetOneUS from "./LessonSets/LessonSetOneUS";
+import LessonSetOneUK from "./LessonSets/LessonSetOneUK";
+import LessonSetTwoUS from "./LessonSets/LessonSetTwoUS";
+import LessonSetTwoUK from "./LessonSets/LessonSetTwoUK";
+import LessonSetThreeUS from "./LessonSets/LessonSetThreeUS";
+import LessonSetThreeUK from "./LessonSets/LessonSetThreeUK";
 
 
 class LessonArea extends Component {
@@ -11,6 +16,9 @@ class LessonArea extends Component {
         this.state = {
             flagSelect1: 'usLayout flagHighlighted',
           
+        }
+        this.lessons = {
+            
         }
         
         
@@ -32,228 +40,28 @@ class LessonArea extends Component {
 	
 	render() {
 		
-		
-		
-		
-		
-      
 		return (
         
 		this.state.flagSelect1 === 'usLayout flagHighlighted' ?
+            
         <TypingConsumer>
-            {({state}) => (    
+            {({state, startLesson}) => (    
 		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">
-			{state.lessonsActive}
-			<div id="lessonSetOne">
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson1" data-keys="KeyF,KeyJ,KeyG,KeyH,Space" onClick={this.startLesson}>LESSON 1</h5>
-			<h4>f, j, g, h</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson2" data-keys="KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,Space" onClick={this.startLesson}>LESSON 2</h5>
-			<h4>a, s, d, k , l & ;</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson3" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,Space" onClick={this.startLesson}>LESSON 3</h5>
-			<h4>Home Row (Row 3)</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson4" data-keys="KeyR,KeyT,KeyY,KeyU,KeyI,Space" onClick={this.startLesson}>LESSON 4</h5>
-			<h4>r, t, y, u & i</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson5" data-keys="KeyQ,KeyW,KeyE,KeyO,KeyP,Space" onClick={this.startLesson}>LESSON 5</h5>
-			<h4>q, w, e, o & p</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson6" data-keys="KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,Space" onClick={this.startLesson}>LESSON 6</h5>
-			<h4>Row 2</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson7" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,Space" onClick={this.startLesson}>LESSON 7</h5>
-			<h4>Row 2 & Row 3</h4></div>		
-			</div>
-			
-			
-			<div id="lessonSetTwo">
-			
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson8" data-keys="KeyV,KeyB,KeyN,KeyM,Space" onClick={this.startLesson}>LESSON 8</h5>
-			<h4>v, b, n & m</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson9" data-keys="KeyZ,KeyX,KeyC,Comma,Period,Slash,Space" onClick={this.startLesson}>LESSON 9</h5>
-			<h4>z, x, c, ., comma & /</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson10" data-keys="KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Space" onClick={this.startLesson}>LESSON 10</h5>
-			<h4>Row 4</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson11" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Space" onClick={this.startLesson}>LESSON 11</h5>
-			<h4>Rows 2, 3, 4</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson12" data-keys="Digit1,Digit2,Digit3,Digit9,Digit0,Space" onClick={this.startLesson}>LESSON 12</h5>
-			<h4>Numbers 1, 2, 3, 9, 0</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson13" data-keys="Digit4,Digit5,Digit6,Digit7,Digit8,Space" onClick={this.startLesson}>LESSON 13</h5>
-			<h4>Numbers 4, 5, 6, 7, 8</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson14" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Digit1,Digit2,Digit3,Digit9,Digit0,Digit4,Digit5,Digit6,Digit7,Digit8,Space" onClick={this.startLesson}>LESSON 14</h5>
-			<h4>Rows 1, 2, 3, 4</h4></div>	
-			</div>
-		
-			
-			<div id="lessonSetThree">
-				
-		
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson15" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Digit1,Digit2,Digit3,Digit9,Digit0,Digit4,Digit5,Digit6,Digit7,Digit8,ShiftLeft,ShiftRight,Space" onClick={this.startLesson}>LESSON 15</h5>
-			<h4>Capital Letters</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson16" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,ShiftLeft,ShiftRight,Period,Space" onClick={this.startLesson}>LESSON 16</h5>
-			<h4>Words words words..</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson17" data-keys="Comma,Period,Slash,Semicolon,BracketLeft,BracketRight,Quote,ShiftLeft,ShiftRight,IntlBackslash,Space" onClick={this.startLesson}>LESSON 17</h5>
-				<h4>Symbols {"[] {} <> ? ' : \\"}  </h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson18" data-keys="Digit1,Digit2,Digit3,Digit8,Digit6,Digit9,Digit0,Digit7,Digit4,Digit5,ShiftLeft,ShiftRight,Space" onClick={this.startLesson}>LESSON 18</h5>
-			<h4>Symbols {'! @ * ^ ( ) & $ % #'}</h4></div>
-				
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson19" data-keys="Backquote,IntlBackslash,Minus,Equal,Quote,ShiftLeft,ShiftRight,Space" onClick={this.startLesson}>LESSON 19</h5>
-			<h4>Symbols {'` _ - + = | " ~'}</h4></div>
-			
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson20" data-keys="Comma,Period,Slash,Semicolon,BracketLeft,BracketRight,Quote,ShiftLeft,ShiftRight,IntlBackslash,Digit1,Digit2,Digit3,Digit8,Digit6,Digit9,Digit0,Digit7,Digit4,Digit5,Backquote,Minus,Equal,Quote,Space" onClick={this.startLesson}>LESSON 20</h5>
-			<h4>All Symbols</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson21" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Digit1,Digit2,Digit3,Digit9,Digit0,Digit4,Digit5,Digit6,Digit7,Digit8,BracketLeft,BracketRight,Quote,ShiftLeft,ShiftRight,IntlBackslash,Backquote,Minus,Equal,Space" onClick={this.startLesson}>LESSON 21</h5>
-			<h4>Full Keyboard</h4></div>	
-			</div>
-				
-			
+			<LessonSetOneUS />
+			<LessonSetTwoUS />
+			<LessonSetThreeUS />	
 		</section>
         	 )}
         </TypingConsumer>
+
 		:
+        
         <TypingConsumer>
             {({state}) => (
-		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">
-			
-			<div id="lessonSetOne">
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson1" data-keys="KeyF,KeyJ,KeyG,KeyH,Space" onClick={this.startLesson}>LESSON 1</h5>
-			<h4>f, j, g, h</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson2" data-keys="KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,Space" onClick={this.startLesson}>LESSON 2</h5>
-			<h4>a, s, d, k , l & ;</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson3" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,Space" onClick={this.startLesson}>LESSON 3</h5>
-			<h4>Home Row (Row 3)</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson4" data-keys="KeyR,KeyT,KeyY,KeyU,KeyI,Space" onClick={this.startLesson}>LESSON 4</h5>
-			<h4>r, t, y, u & i</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson5" data-keys="KeyQ,KeyW,KeyE,KeyO,KeyP,Space" onClick={this.startLesson}>LESSON 5</h5>
-			<h4>q, w, e, o & p</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson6" data-keys="KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,Space" onClick={this.startLesson}>LESSON 6</h5>
-			<h4>Row 2</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson7" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,Space" onClick={this.startLesson}>LESSON 7</h5>
-			<h4>Row 2 & Row 3</h4></div>		
-			</div>
-			
-		
-			<div id="lessonSetTwo">
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson8" data-keys="KeyV,KeyB,KeyN,KeyM,Space" onClick={this.startLesson}>LESSON 8</h5>
-			<h4>v, b, n & m</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson9" data-keys="KeyZ,KeyX,KeyC,Comma,Period,Slash,Space" onClick={this.startLesson}>LESSON 9</h5>
-			<h4>z, x, c, ., comma & /</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson10" data-keys="KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Space" onClick={this.startLesson}>LESSON 10</h5>
-			<h4>Row 4</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson11" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Space" onClick={this.startLesson}>LESSON 11</h5>
-			<h4>Rows 2, 3, 4</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson12" data-keys="Digit1,Digit2,Digit3,Digit9,Digit0,Space" onClick={this.startLesson}>LESSON 12</h5>
-			<h4>Numbers 1, 2, 3, 9, 0</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson13" data-keys="Digit4,Digit5,Digit6,Digit7,Digit8,Space" onClick={this.startLesson}>LESSON 13</h5>
-			<h4>Numbers 4, 5, 6, 7, 8</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson14" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Digit1,Digit2,Digit3,Digit9,Digit0,Digit4,Digit5,Digit6,Digit7,Digit8,Space" onClick={this.startLesson}>LESSON 14</h5>
-			<h4>Rows 1, 2, 3, 4</h4></div>	
-			</div>
-		
-		
-			<div id="lessonSetThree">
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson15" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Digit1,Digit2,Digit3,Digit9,Digit0,Digit4,Digit5,Digit6,Digit7,Digit8,ShiftLeft,ShiftRight,Space" onClick={this.startLesson}>LESSON 15</h5>
-			<h4>Capital Letters</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson16" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,ShiftLeft,ShiftRight,Period,Space" onClick={this.startLesson}>LESSON 16</h5>
-			<h4>Words words words..</h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson17" data-keys="Comma,Period,Slash,Semicolon,BracketLeft,BracketRight,Quote,ShiftLeft,ShiftRight,IntlBackslash,Space" onClick={this.startLesson}>LESSON 17</h5>
-				<h4>Symbols {"[] {} <> ? ' : \\"}  </h4></div>
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson18" data-keys="Digit1,Digit2,Digit3,Digit8,Digit6,Digit9,Digit0,Digit7,Digit4,Digit5,ShiftLeft,ShiftRight,Space" onClick={this.startLesson}>LESSON 18</h5>
-			<h4>Symbols {'! " * ^ ( ) & $ % £'}</h4></div>
-				
-			
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson19" data-keys="Backquote,IntlBackslash,Minus,Equal,Quote,Backslash,ShiftLeft,ShiftRight,Space" onClick={this.startLesson}>LESSON 19</h5>
-			<h4>Symbols {'` ¬ _ - + = | @ ~ #'}</h4></div>
-			
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson20" data-keys="Comma,Period,Slash,Semicolon,BracketLeft,BracketRight,Quote,ShiftLeft,ShiftRight,IntlBackslash,Digit1,Digit2,Digit3,Digit8,Digit6,Digit9,Digit0,Digit7,Digit4,Digit5,Backquote,IntlBackslash,Minus,Equal,Quote,Backslash,Space" onClick={this.startLesson}>LESSON 20</h5>
-			<h4>All Symbols</h4></div>
-				
-			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson21" data-keys="KeyF,KeyG,KeyH,KeyJ,KeyA,KeyS,KeyD,KeyK,KeyL,Semicolon,KeyQ,KeyW,KeyE,KeyO,KeyP,KeyR,KeyT,KeyY,KeyU,KeyI,KeyV,KeyB,KeyN,KeyM,KeyZ,KeyX,KeyC,Comma,Period,Slash,Digit1,Digit2,Digit3,Digit9,Digit0,Digit4,Digit5,Digit6,Digit7,Digit8,BracketLeft,BracketRight,Quote,ShiftLeft,ShiftRight,IntlBackslash,Backquote,Minus,Equal,Backslash,Space" onClick={this.startLesson}>LESSON 21</h5>
-			<h4>Full Keyboard</h4></div>
-				
-			</div>
-				
-				
-			
-			
-		
+		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">	
+			<LessonSetOneUK />
+		    <LessonSetTwoUK />
+			<LessonSetThreeUK />
 		</section>
         )}
         </TypingConsumer>
@@ -261,22 +69,5 @@ class LessonArea extends Component {
 	}
 }
 
-/*const mapStateToProps = (state) => {
-	return {
-		lessonsActive: state.displayLessonsMenu,
-		flagSelect1: state.flagSelect1,
-		flagSelect2: state.flagSelect2
-	
-	
-	}
-}
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-        startLesson: (lessonNumber,keys) => {dispatch({type: 'STARTLESSON', lessonNumber: lessonNumber, keys: keys})},
-		
-	
-	}
-}
-*/
 export default LessonArea;

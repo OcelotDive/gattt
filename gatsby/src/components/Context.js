@@ -55,6 +55,11 @@ render() {
             this.setState(()=> ({
                 boardSelect: layout
             }))
+        },
+        startLesson: (e) => {
+            for(let a in e) {
+                console.log(a)
+            }
         }
 }}>
         {this.props.children}

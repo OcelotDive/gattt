@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 
-import Lesson0Instructions from './Lesson0Instructions';
-import Lesson1Instructions from './Lesson1Instructions';
-import Lesson2Instructions from './Lesson2Instructions';
-import Lesson3Instructions from './Lesson3Instructions';
-import Lesson4Instructions from './Lesson4Instructions';
-import Lesson5Instructions from './Lesson5Instructions';
-import Lesson6Instructions from './Lesson6Instructions';
-import Lesson7Instructions from './Lesson7Instructions';
-import Lesson8Instructions from './Lesson8Instructions';
-import Lesson9Instructions from './Lesson9Instructions';
-import Lesson10Instructions from './Lesson10Instructions';
-import Lesson11Instructions from './Lesson11Instructions';
-import Lesson12Instructions from './Lesson12Instructions';
-import Lesson13Instructions from './Lesson13Instructions';
-import Lesson14Instructions from './Lesson14Instructions';
-import Lesson15Instructions from './Lesson15Instructions';
-import Lesson16Instructions from './Lesson16Instructions';
-import Lesson17Instructions from './Lesson17Instructions';
-import Lesson18Instructions from './Lesson18Instructions';
-import Lesson19Instructions from './Lesson19Instructions';
-import Lesson20Instructions from './Lesson20Instructions';
-import Lesson21Instructions from './Lesson21Instructions';
+import Lesson0Instructions from './LessonInstructions/Lesson0Instructions';
+import Lesson1Instructions from './LessonInstructions/Lesson1Instructions';
+import Lesson2Instructions from './LessonInstructions/Lesson2Instructions';
+import Lesson3Instructions from './LessonInstructions/Lesson3Instructions';
+import Lesson4Instructions from './LessonInstructions/Lesson4Instructions';
+import Lesson5Instructions from './LessonInstructions/Lesson5Instructions';
+import Lesson6Instructions from './LessonInstructions/Lesson6Instructions';
+import Lesson7Instructions from './LessonInstructions/Lesson7Instructions';
+import Lesson8Instructions from './LessonInstructions/Lesson8Instructions';
+import Lesson9Instructions from './LessonInstructions/Lesson9Instructions';
+import Lesson10Instructions from './LessonInstructions/Lesson10Instructions';
+import Lesson11Instructions from './LessonInstructions/Lesson11Instructions';
+import Lesson12Instructions from './LessonInstructions/Lesson12Instructions';
+import Lesson13Instructions from './LessonInstructions/Lesson13Instructions';
+import Lesson14Instructions from './LessonInstructions/Lesson14Instructions';
+import Lesson15Instructions from './LessonInstructions/Lesson15Instructions';
+import Lesson16Instructions from './LessonInstructions/Lesson16Instructions';
+import Lesson17Instructions from './LessonInstructions/Lesson17Instructions';
+import Lesson18Instructions from './LessonInstructions/Lesson18Instructions';
+import Lesson19Instructions from './LessonInstructions/Lesson19Instructions';
+import Lesson20Instructions from './LessonInstructions/Lesson20Instructions';
+import Lesson21Instructions from './LessonInstructions/Lesson21Instructions';
 
 class InstructionArea extends Component {
     constructor(props) {
