@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {TypingConsumer} from "./Context";
+
 import Lesson0Instructions from './Lesson0Instructions';
 import Lesson1Instructions from './Lesson1Instructions';
 import Lesson2Instructions from './Lesson2Instructions';
@@ -26,7 +26,7 @@ import Lesson21Instructions from './Lesson21Instructions';
 class InstructionArea extends Component {
     constructor(props) {
         super(props)
-        console.table(props)
+     
     this.lessonComponents = {
         
         lesson0: Lesson0Instructions,
@@ -53,19 +53,14 @@ class InstructionArea extends Component {
         lesson21: Lesson21Instructions
         
     }
-	
+
     }
 	render() {
-        const LessonComponent = this.lessonComponents[this.props.state.activeLessonNumber];
+    
+        const LessonComponent = this.lessonComponents[this.props.activeLessonNumber];
 
 		return (
-		
-			<TypingConsumer>
-            {(context) => (
-			<LessonComponent/>
-            )}
-	       </TypingConsumer>
-			
+			<LessonComponent/>	
 		)
     
 	}

@@ -7,7 +7,7 @@ import Keyboard from "./Keyboard";
 import KeyboardSelect from "./KeyboardSelect";
 import InstructionArea from "./InstructionArea";
 import {TypingProvider} from "./Context";
-
+import {TypingConsumer} from "./Context";
 class TypingTutor extends Component {
 	
 	state = {
@@ -27,7 +27,11 @@ class TypingTutor extends Component {
                 <KeyboardSelect />
                 <Keyboard />
                 <LessonArea />
-                <InstructionArea/>
+                <TypingConsumer>
+                {({state}) => (
+                <InstructionArea activeLessonNumber={state.activeLessonNumber}/>
+                 )}
+                </TypingConsumer>
               </section>
           </TypingProvider>
             

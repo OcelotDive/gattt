@@ -12,13 +12,9 @@ class App extends Component {
     return (
    
       <div className="App">
-   	
-	
        <TextArea />
 		<ControlPanel />
-		
 		<Keyboard />
-		
 		<LessonArea />
 		<TimeFrame />
 		<InstructionArea/>
