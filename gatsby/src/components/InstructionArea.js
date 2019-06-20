@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Lesson0Instructions from './LessonInstructions/Lesson0Instructions';
 import Lesson1Instructions from './LessonInstructions/Lesson1Instructions';
@@ -23,11 +23,9 @@ import Lesson19Instructions from './LessonInstructions/Lesson19Instructions';
 import Lesson20Instructions from './LessonInstructions/Lesson20Instructions';
 import Lesson21Instructions from './LessonInstructions/Lesson21Instructions';
 
-class InstructionArea extends Component {
-    constructor(props) {
-        super(props)
-     
-    this.lessonComponents = {
+function InstructionArea(props) {
+    
+   const lessonComponents = {
         
         lesson0: Lesson0Instructions,
         lesson1: Lesson1Instructions,
@@ -54,16 +52,16 @@ class InstructionArea extends Component {
         
     }
 
-    }
-	render() {
     
-        const LessonComponent = this.lessonComponents[this.props.activeLessonNumber];
+	
+    
+        const LessonComponent = lessonComponents[props.activeLessonNumber];
 
 		return (
 			<LessonComponent/>	
 		)
     
-	}
+	
 }
 	
 
