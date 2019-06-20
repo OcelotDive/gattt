@@ -32,7 +32,7 @@ render() {
         
         classChange: (id, capsDown) => {
             this.setState((currentState) => {   
-          currentState = keyboardOPS.keyboardKeyPress(id, capsDown,  this.state);
+                currentState = keyboardOPS.keyboardKeyPress(id, capsDown,  this.state);
                 console.log(currentState)
                 return Object.assign({}, currentState);
             })
@@ -40,7 +40,7 @@ render() {
             
         classChangeOff: (key, capsDown) => {
             this.setState((currentState) => {
-            currentState = keyboardOPS.keyboardKeyRelease(key, capsDown, this.state);
+                currentState = keyboardOPS.keyboardKeyRelease(key, capsDown, this.state);
                 console.log(currentState);
                 return Object.assign({}, currentState);
                 
