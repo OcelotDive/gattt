@@ -47,7 +47,7 @@ class LessonArea extends Component {
         <TypingConsumer>
             {({state, startLesson}) => (    
 		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">
-			<LessonSetOneUS />
+			<LessonSetOneUS startLesson={startLesson}/>
 			<LessonSetTwoUS />
 			<LessonSetThreeUS />	
 		</section>

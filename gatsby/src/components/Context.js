@@ -23,6 +23,7 @@ class TypingProvider extends Component {
         displayBoard: true
  
     }
+
 render() {
         const state = this.state;
     return (
@@ -56,10 +57,11 @@ render() {
                 boardSelect: layout
             }))
         },
-        startLesson: (e) => {
-            for(let a in e) {
-                console.log(a)
-            }
+        startLesson: (lessonName, lessonKeys) => {
+           this.setState(()=> ({
+               activeLessonNumber: lessonName,
+               lessonKeys: lessonKeys     
+           }))
         }
 }}>
         {this.props.children}
@@ -73,6 +75,7 @@ class TypingConsumer extends Component {
     
 render() {
     return (
+        
         <Context.Consumer>
    
        {this.props.children}
