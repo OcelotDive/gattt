@@ -8,6 +8,7 @@ class TypingProvider extends Component {
         activeLessonNumber: "lesson5",
         usedString: '',
         lessonsActive: false,
+        flagSelect: 'usLayout flagHighlighted',
         lessonKeys: ["KeyS", "KeyA"],
         currentClass: '',
         mistakes: [],

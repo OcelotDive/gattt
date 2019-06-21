@@ -1,39 +1,17 @@
-import React, { Component } from 'react';
-import {TypingConsumer} from "./Context";
+import React from 'react';
 
 
-class ControlPanel extends Component {
-	
-	
-	
-	
-	
-	handleButtonReset = () => {
-			//this.props.startLesson(this.props.activeLesson, this.props.lessonKeys, 1);
-			//this.props.sendPanelOff();
-		}
-	
-	render() {
-	
 
-		
-		return (
-          
-        
-          
-     
-       <TypingConsumer>
-            {(context)=> (
+function ControlPanel({lessonsOnOff}) {
+	
+	
+		return ( 
 		<div className="controlPanel">
-		<button id="LessonButton" className="lessonButton" onMouseDown={context.lessonsOnOff}>Lessons</button>
-		<button id="ResetButton" className="lessonButton" onMouseDown={this.handleButtonReset}>Restart</button>	
+		<button id="LessonButton" className="lessonButton" onMouseDown={()=>lessonsOnOff()}>Lessons</button>
+		<button id="ResetButton" className="lessonButton">Restart</button>	
 		</div>
-            )}
-        </TypingConsumer>
-      
-
 		)
-	}
+
 }
 
 

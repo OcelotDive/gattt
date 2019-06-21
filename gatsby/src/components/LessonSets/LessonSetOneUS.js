@@ -1,7 +1,7 @@
 import React from "react";
 
-function LessonSetOneUS(props) {
-  
+function LessonSetOneUS({startLesson, lessonsOnOff}) {
+
     const setOne = {
         lesson1: {
             name: "lesson1",
@@ -34,16 +34,19 @@ function LessonSetOneUS(props) {
         
     }
     
-
+    const handleClick = (lessonName, keys) =>{
+        startLesson(lessonName, keys);
+        lessonsOnOff();
+    }
         
         return (
             <div id="lessonSetOne">
 			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" onClick={()=>props.startLesson(setOne.lesson1.name,setOne.lesson1.keys)}>LESSON 1</h5>
+			<h5 className="lessonTitle" onClick={()=>handleClick(setOne.lesson1.name,setOne.lesson1.keys)}>LESSON 1</h5>
 			<h4>f, j, g, h</h4></div>
 			
 			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" onClick={()=>props.startLesson(setOne.lesson2.name,setOne.lesson2.keys)}>LESSON 2</h5>
+			<h5 className="lessonTitle" onClick={()=>handleClick(setOne.lesson2.name,setOne.lesson2.keys)}>LESSON 2</h5>
 			<h4>a, s, d, k , l & ;</h4></div>
 			
 			<div className="lessonContainer" id="lessonDiv">

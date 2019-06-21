@@ -22,14 +22,18 @@ class TypingTutor extends Component {
         
           <TypingProvider>
 		      <section>
+                <TypingConsumer>
+                {(context) => (
+                <div>
                 <TextArea />
-                <ControlPanel />
+                <ControlPanel lessonsOnOff={context.lessonsOnOff}/>
                 <KeyboardSelect />
                 <Keyboard />
-                <LessonArea />
-                <TypingConsumer>
-                {({state}) => (
-                <InstructionArea activeLessonNumber={state.activeLessonNumber}/>
+                <LessonArea lessonsActive={context.state.lessonsActive} flagSelect={context.state.flagSelect}
+                    startLesson={context.startLesson} lessonsOnOff={context.lessonsOnOff}/>
+                
+                <InstructionArea activeLessonNumber={context.state.activeLessonNumber}/>
+                </div>
                  )}
                 </TypingConsumer>
               </section>

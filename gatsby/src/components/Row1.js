@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Row1 extends Component {
 	
 	//Start keypress listener.
-	componentWillMount(){
+	componentDidMount(){
     document.addEventListener("keydown", this.handleKeyPress.bind(this));
 	document.addEventListener("keyup", this.handleKeyUp.bind(this));	
 }

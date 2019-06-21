@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import {TypingConsumer} from "./Context";
+import React  from 'react';
 import LessonSetOneUS from "./LessonSets/LessonSetOneUS";
 import LessonSetOneUK from "./LessonSets/LessonSetOneUK";
 import LessonSetTwoUS from "./LessonSets/LessonSetTwoUS";
@@ -8,65 +7,39 @@ import LessonSetThreeUS from "./LessonSets/LessonSetThreeUS";
 import LessonSetThreeUK from "./LessonSets/LessonSetThreeUK";
 
 
-class LessonArea extends Component {
-    
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-            flagSelect1: 'usLayout flagHighlighted',
-          
-        }
-        this.lessons = {
-            
-        }
-        
-        
-    }
+function LessonArea({lessonsActive, flagSelect, startLesson, lessonsOnOff}) {
     
 
-	startLesson = (e) => {
-		
-		let lessonNumber = e.target.id;
-      
-		
-		let keys = e.target.dataset.keys || 'Space';
-		keys = keys.split(',');
+   
+    
 
-		setTimeout(()=> {
-		this.props.startLesson(lessonNumber, keys);
-		}, 500)
-	}
-	
-	render() {
+
+
 		
 		return (
         
-		this.state.flagSelect1 === 'usLayout flagHighlighted' ?
+		flagSelect === 'usLayout flagHighlighted' ?
             
-        <TypingConsumer>
-            {({state, startLesson}) => (    
-		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">
-			<LessonSetOneUS startLesson={startLesson}/>
+       
+		<section className={lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">
+			<LessonSetOneUS startLesson={startLesson} lessonsOnOff={lessonsOnOff}/>
 			<LessonSetTwoUS />
 			<LessonSetThreeUS />	
 		</section>
-        	 )}
-        </TypingConsumer>
+        	
+      
 
 		:
         
-        <TypingConsumer>
-            {({state}) => (
-		<section className={state.lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">	
+       
+		<section className={lessonsActive ? "lessonArea dropDown" : "lessonArea liftUp"} id="lessonPanel">	
 			<LessonSetOneUK />
 		    <LessonSetTwoUK />
 			<LessonSetThreeUK />
 		</section>
-        )}
-        </TypingConsumer>
+    
 		)
-	}
+	
 }
 
 
