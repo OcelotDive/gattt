@@ -35,6 +35,7 @@ function LessonSetOneUS({startLesson, lessonsOnOff}) {
     }
     
     const handleClick = (lessonName, keys) =>{
+       
         startLesson(lessonName, keys);
         lessonsOnOff();
     }
@@ -50,23 +51,23 @@ function LessonSetOneUS({startLesson, lessonsOnOff}) {
 			<h4>a, s, d, k , l & ;</h4></div>
 			
 			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle">LESSON 3</h5>
+			<h5 className="lessonTitle" onClick={()=>handleClick(setOne.lesson3.name,setOne.lesson3.keys)}>LESSON 3</h5>
 			<h4>Home Row (Row 3)</h4></div>
 			
 			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle">LESSON 4</h5>
+			<h5 className="lessonTitle" onClick={()=>handleClick(setOne.lesson4.name,setOne.lesson4.keys)}>LESSON 4</h5>
 			<h4>r, t, y, u & i</h4></div>
 				
 			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle">LESSON 5</h5>
+			<h5 className="lessonTitle" onClick={()=>handleClick(setOne.lesson5.name,setOne.lesson5.keys)}>LESSON 5</h5>
 			<h4>q, w, e, o & p</h4></div>
 				
 			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" >LESSON 6</h5>
+			<h5 className="lessonTitle" onClick={()=>handleClick(setOne.lesson6.name,setOne.lesson6.keys)}>LESSON 6</h5>
 			<h4>Row 2</h4></div>
 				
 			<div className="lessonContainer" id="lessonDiv">
-			<h5 className="lessonTitle" id="Lesson7">LESSON 7</h5>
+			<h5 className="lessonTitle" id="Lesson7" onClick={()=>handleClick(setOne.lesson6.name,setOne.lesson6.keys)}>LESSON 7</h5>
 			<h4>Row 2 & Row 3</h4></div>		
 			</div>
         
